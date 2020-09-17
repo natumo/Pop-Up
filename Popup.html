@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <link rel="stylesheet" href="/AllSystem/JS/Popup-0.2/Popup.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <div class="element_size_block">
+        <a href="javascript:void(0)" class="popup-button size-button" data="size-tab">POPUP BUTTON</a>
+    </div>
+    <div class="popup-body-element size-popup">
+        <div class="popup-close popup-close-js"></div>
+        <div class="popup-content">
+            <div class="close-button popup-close-js">
+                <div class="line-container">
+                    <span class="close-line-1"></span>
+                    <span class="close-line-2"></span>
+                </div>
+            </div>
+            <p>POPUP BODY</p>
+        </div>
+    </div>
+</div>
+<div style="height: 2000px;">
+
+</div>
+</body>
+<script src="/AllSystem/JS/Popup-0.2/Popup.js"></script>
+<script>
+
+
+
+
+    function functionBeforeOpen(elem) {
+        console.log('functionBeforeOpen')
+    }
+
+    function functionAfterClose(elem) {
+        console.log('functionAfterClose')
+    }
+
+    let popup = new Popup({
+        popupClass: 'size-popup',
+        buttonsClass: ['size-button'],
+        classClose: ['popup-close-js'],
+        'functionBeforeOpen': functionBeforeOpen,
+        'functionAfterClose': functionAfterClose,
+    })
+    /**
+     popupClass - обязателен
+     buttonsClass - может быит пустым
+     classClose - не озязателен( объект должен быть внутри popupClass)
+     **/
+    popup.ClosePopup();
+
+</script>
+</html>
